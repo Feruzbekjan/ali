@@ -1,0 +1,1446 @@
+[33mcommit 5a66cfe3d4de16c1eeb6bc4c55c9e85d05fb2da9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: sjv18 <ortiqjonegamov2333@gmail.com>
+Date:   Wed Nov 1 21:31:12 2023 +0500
+
+    first commit
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..549e00a[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32mHELP.md[m
+[32m+[m[32mtarget/[m
+[32m+[m[32m!.mvn/wrapper/maven-wrapper.jar[m
+[32m+[m[32m!**/src/main/**/target/[m
+[32m+[m[32m!**/src/test/**/target/[m
+[32m+[m
+[32m+[m[32m### STS ###[m
+[32m+[m[32m.apt_generated[m
+[32m+[m[32m.classpath[m
+[32m+[m[32m.factorypath[m
+[32m+[m[32m.project[m
+[32m+[m[32m.settings[m
+[32m+[m[32m.springBeans[m
+[32m+[m[32m.sts4-cache[m
+[32m+[m
+[32m+[m[32m### IntelliJ IDEA ###[m
+[32m+[m[32m.idea[m
+[32m+[m[32m*.iws[m
+[32m+[m[32m*.iml[m
+[32m+[m[32m*.ipr[m
+[32m+[m
+[32m+[m[32m### NetBeans ###[m
+[32m+[m[32m/nbproject/private/[m
+[32m+[m[32m/nbbuild/[m
+[32m+[m[32m/dist/[m
+[32m+[m[32m/nbdist/[m
+[32m+[m[32m/.nb-gradle/[m
+[32m+[m[32mbuild/[m
+[32m+[m[32m!**/src/main/**/build/[m
+[32m+[m[32m!**/src/test/**/build/[m
+[32m+[m
+[32m+[m[32m### VS Code ###[m
+[32m+[m[32m.vscode/[m
+[1mdiff --git a/.mvn/wrapper/maven-wrapper.jar b/.mvn/wrapper/maven-wrapper.jar[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bf82ff0[m
+Binary files /dev/null and b/.mvn/wrapper/maven-wrapper.jar differ
+[1mdiff --git a/.mvn/wrapper/maven-wrapper.properties b/.mvn/wrapper/maven-wrapper.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ca5ab4b[m
+[1m--- /dev/null[m
+[1m+++ b/.mvn/wrapper/maven-wrapper.properties[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m# Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m# or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m# distributed with this work for additional information[m
+[32m+[m[32m# regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m# to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m# "License"); you may not use this file except in compliance[m
+[32m+[m[32m# with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m#[m
+[32m+[m[32m#   https://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m#[m
+[32m+[m[32m# Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m# software distributed under the License is distributed on an[m
+[32m+[m[32m# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m# KIND, either express or implied.  See the License for the[m
+[32m+[m[32m# specific language governing permissions and limitations[m
+[32m+[m[32m# under the License.[m
+[32m+[m[32mdistributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.8.7/apache-maven-3.8.7-bin.zip[m
+[32m+[m[32mwrapperUrl=https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.1/maven-wrapper-3.1.1.jar[m
+[1mdiff --git a/mvnw b/mvnw[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a8fb22[m
+[1m--- /dev/null[m
+[1m+++ b/mvnw[m
+[36m@@ -0,0 +1,316 @@[m
+[32m+[m[32m#!/bin/sh[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m# or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m# distributed with this work for additional information[m
+[32m+[m[32m# regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m# to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m# "License"); you may not use this file except in compliance[m
+[32m+[m[32m# with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m#[m
+[32m+[m[32m#    https://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m#[m
+[32m+[m[32m# Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m# software distributed under the License is distributed on an[m
+[32m+[m[32m# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m# KIND, either express or implied.  See the License for the[m
+[32m+[m[32m# specific language governing permissions and limitations[m
+[32m+[m[32m# under the License.[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m[32m# Maven Start Up Batch script[m
+[32m+[m[32m#[m
+[32m+[m[32m# Required ENV vars:[m
+[32m+[m[32m# ------------------[m
+[32m+[m[32m#   JAVA_HOME - location of a JDK home dir[m
+[32m+[m[32m#[m
+[32m+[m[32m# Optional ENV vars[m
+[32m+[m[32m# -----------------[m
+[32m+[m[32m#   M2_HOME - location of maven2's installed home dir[m
+[32m+[m[32m#   MAVEN_OPTS - parameters passed to the Java VM when running Maven[m
+[32m+[m[32m#     e.g. to debug Maven itself, use[m
+[32m+[m[32m#       set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000[m
+[32m+[m[32m#   MAVEN_SKIP_RC - flag to disable loading of mavenrc files[m
+[32m+[m[32m# ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32mif [ -z "$MAVEN_SKIP_RC" ] ; then[m
+[32m+[m
+[32m+[m[32m  if [ -f /usr/local/etc/mavenrc ] ; then[m
+[32m+[m[32m    . /usr/local/etc/mavenrc[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  if [ -f /etc/mavenrc ] ; then[m
+[32m+[m[32m    . /etc/mavenrc[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  if [ -f "$HOME/.mavenrc" ] ; then[m
+[32m+[m[32m    . "$HOME/.mavenrc"[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# OS specific support.  $var _must_ be set to either true or false.[m
+[32m+[m[32mcygwin=false;[m
+[32m+[m[32mdarwin=false;[m
+[32m+[m[32mmingw=false[m
+[32m+[m[32mcase "`uname`" in[m
+[32m+[m[32m  CYGWIN*) cygwin=true ;;[m
+[32m+[m[32m  MINGW*) mingw=true;;[m
+[32m+[m[32m  Darwin*) darwin=true[m
+[32m+[m[32m    # Use /usr/libexec/java_home if available, otherwise fall back to /Library/Java/Home[m
+[32m+[m[32m    # See https://developer.apple.com/library/mac/qa/qa1170/_index.html[m
+[32m+[m[32m    if [ -z "$JAVA_HOME" ]; then[m
+[32m+[m[32m      if [ -x "/usr/libexec/java_home" ]; then[m
+[32m+[m[32m        export JAVA_HOME="`/usr/libexec/java_home`"[m
+[32m+[m[32m      else[m
+[32m+[m[32m        export JAVA_HOME="/Library/Java/Home"[m
+[32m+[m[32m      fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    ;;[m
+[32m+[m[32mesac[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ] ; then[m
+[32m+[m[32m  if [ -r /etc/gentoo-release ] ; then[m
+[32m+[m[32m    JAVA_HOME=`java-config --jre-home`[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$M2_HOME" ] ; then[m
+[32m+[m[32m  ## resolve links - $0 may be a link to maven's home[m
+[32m+[m[32m  PRG="$0"[m
+[32m+[m
+[32m+[m[32m  # need this for relative symlinks[m
+[32m+[m[32m  while [ -h "$PRG" ] ; do[m
+[32m+[m[32m    ls=`ls -ld "$PRG"`[m
+[32m+[m[32m    link=`expr "$ls" : '.*-> \(.*\)$'`[m
+[32m+[m[32m    if expr "$link" : '/.*' > /dev/null; then[m
+[32m+[m[32m      PRG="$link"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      PRG="`dirname "$PRG"`/$link"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  done[m
+[32m+[m
+[32m+[m[32m  saveddir=`pwd`[m
+[32m+[m
+[32m+[m[32m  M2_HOME=`dirname "$PRG"`/..[m
+[32m+[m
+[32m+[m[32m  # make it fully qualified[m
+[32m+[m[32m  M2_HOME=`cd "$M2_HOME" && pwd`[m
+[32m+[m
+[32m+[m[32m  cd "$saveddir"[m
+[32m+[m[32m  # echo Using m2 at $M2_HOME[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# For Cygwin, ensure paths are in UNIX format before anything is touched[m
+[32m+[m[32mif $cygwin ; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME=`cygpath --unix "$M2_HOME"`[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME=`cygpath --unix "$JAVA_HOME"`[m
+[32m+[m[32m  [ -n "$CLASSPATH" ] &&[m
+[32m+[m[32m    CLASSPATH=`cygpath --path --unix "$CLASSPATH"`[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# For Mingw, ensure paths are in UNIX format before anything is touched[m
+[32m+[m[32mif $mingw ; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME="`(cd "$M2_HOME"; pwd)`"[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME="`(cd "$JAVA_HOME"; pwd)`"[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ]; then[m
+[32m+[m[32m  javaExecutable="`which javac`"[m
+[32m+[m[32m  if [ -n "$javaExecutable" ] && ! [ "`expr \"$javaExecutable\" : '\([^ ]*\)'`" = "no" ]; then[m
+[32m+[m[32m    # readlink(1) is not available as standard on Solaris 10.[m
+[32m+[m[32m    readLink=`which readlink`[m
+[32m+[m[32m    if [ ! `expr "$readLink" : '\([^ ]*\)'` = "no" ]; then[m
+[32m+[m[32m      if $darwin ; then[m
+[32m+[m[32m        javaHome="`dirname \"$javaExecutable\"`"[m
+[32m+[m[32m        javaExecutable="`cd \"$javaHome\" && pwd -P`/javac"[m
+[32m+[m[32m      else[m
+[32m+[m[32m        javaExecutable="`readlink -f \"$javaExecutable\"`"[m
+[32m+[m[32m      fi[m
+[32m+[m[32m      javaHome="`dirname \"$javaExecutable\"`"[m
+[32m+[m[32m      javaHome=`expr "$javaHome" : '\(.*\)/bin'`[m
+[32m+[m[32m      JAVA_HOME="$javaHome"[m
+[32m+[m[32m      export JAVA_HOME[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVACMD" ] ; then[m
+[32m+[m[32m  if [ -n "$JAVA_HOME"  ] ; then[m
+[32m+[m[32m    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then[m
+[32m+[m[32m      # IBM's JDK on AIX uses strange locations for the executables[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/jre/sh/java"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      JAVACMD="$JAVA_HOME/bin/java"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m  else[m
+[32m+[m[32m    JAVACMD="`\\unset -f command; \\command -v java`"[m
+[32m+[m[32m  fi[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ ! -x "$JAVACMD" ] ; then[m
+[32m+[m[32m  echo "Error: JAVA_HOME is not defined correctly." >&2[m
+[32m+[m[32m  echo "  We cannot execute $JAVACMD" >&2[m
+[32m+[m[32m  exit 1[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mif [ -z "$JAVA_HOME" ] ; then[m
+[32m+[m[32m  echo "Warning: JAVA_HOME environment variable is not set."[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32mCLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher[m
+[32m+[m
+[32m+[m[32m# traverses directory structure from process work directory to filesystem root[m
+[32m+[m[32m# first directory with .mvn subdirectory is considered project base directory[m
+[32m+[m[32mfind_maven_basedir() {[m
+[32m+[m
+[32m+[m[32m  if [ -z "$1" ][m
+[32m+[m[32m  then[m
+[32m+[m[32m    echo "Path not specified to find_maven_basedir"[m
+[32m+[m[32m    return 1[m
+[32m+[m[32m  fi[m
+[32m+[m
+[32m+[m[32m  basedir="$1"[m
+[32m+[m[32m  wdir="$1"[m
+[32m+[m[32m  while [ "$wdir" != '/' ] ; do[m
+[32m+[m[32m    if [ -d "$wdir"/.mvn ] ; then[m
+[32m+[m[32m      basedir=$wdir[m
+[32m+[m[32m      break[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    # workaround for JBEAP-8937 (on Solaris 10/Sparc)[m
+[32m+[m[32m    if [ -d "${wdir}" ]; then[m
+[32m+[m[32m      wdir=`cd "$wdir/.."; pwd`[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    # end of workaround[m
+[32m+[m[32m  done[m
+[32m+[m[32m  echo "${basedir}"[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# concatenates all lines of a file[m
+[32m+[m[32mconcat_lines() {[m
+[32m+[m[32m  if [ -f "$1" ]; then[m
+[32m+[m[32m    echo "$(tr -s '\n' ' ' < "$1")"[m
+[32m+[m[32m  fi[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mBASE_DIR=`find_maven_basedir "$(pwd)"`[m
+[32m+[m[32mif [ -z "$BASE_DIR" ]; then[m
+[32m+[m[32m  exit 1;[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32m# Extension to allow automatically downloading the maven-wrapper.jar from Maven-central[m
+[32m+[m[32m# This allows using the maven wrapper in projects that prohibit checking in binary data.[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32mif [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Found .mvn/wrapper/maven-wrapper.jar"[m
+[32m+[m[32m    fi[m
+[32m+[m[32melse[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    if [ -n "$MVNW_REPOURL" ]; then[m
+[32m+[m[32m      jarUrl="$MVNW_REPOURL/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    else[m
+[32m+[m[32m      jarUrl="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    while IFS="=" read key value; do[m
+[32m+[m[32m      case "$key" in (wrapperUrl) jarUrl="$value"; break ;;[m
+[32m+[m[32m      esac[m
+[32m+[m[32m    done < "$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"[m
+[32m+[m[32m    if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m      echo "Downloading from: $jarUrl"[m
+[32m+[m[32m    fi[m
+[32m+[m[32m    wrapperJarPath="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"[m
+[32m+[m[32m    if $cygwin; then[m
+[32m+[m[32m      wrapperJarPath=`cygpath --path --windows "$wrapperJarPath"`[m
+[32m+[m[32m    fi[m
+[32m+[m
+[32m+[m[32m    if command -v wget > /dev/null; then[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Found wget ... using wget"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then[m
+[32m+[m[32m            wget "$jarUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"[m
+[32m+[m[32m        else[m
+[32m+[m[32m            wget --http-user=$MVNW_USERNAME --http-password=$MVNW_PASSWORD "$jarUrl" -O "$wrapperJarPath" || rm -f "$wrapperJarPath"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m    elif command -v curl > /dev/null; then[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Found curl ... using curl"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then[m
+[32m+[m[32m            curl -o "$wrapperJarPath" "$jarUrl" -f[m
+[32m+[m[32m        else[m
+[32m+[m[32m            curl --user $MVNW_USERNAME:$MVNW_PASSWORD -o "$wrapperJarPath" "$jarUrl" -f[m
+[32m+[m[32m        fi[m
+[32m+[m
+[32m+[m[32m    else[m
+[32m+[m[32m        if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m          echo "Falling back to using Java to download"[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        javaClass="$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.java"[m
+[32m+[m[32m        # For Cygwin, switch paths to Windows format before running javac[m
+[32m+[m[32m        if $cygwin; then[m
+[32m+[m[32m          javaClass=`cygpath --path --windows "$javaClass"`[m
+[32m+[m[32m        fi[m
+[32m+[m[32m        if [ -e "$javaClass" ]; then[m
+[32m+[m[32m            if [ ! -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then[m
+[32m+[m[32m                if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m                  echo " - Compiling MavenWrapperDownloader.java ..."[m
+[32m+[m[32m                fi[m
+[32m+[m[32m                # Compiling the Java class[m
+[32m+[m[32m                ("$JAVA_HOME/bin/javac" "$javaClass")[m
+[32m+[m[32m            fi[m
+[32m+[m[32m            if [ -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then[m
+[32m+[m[32m                # Running the downloader[m
+[32m+[m[32m                if [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m                  echo " - Running MavenWrapperDownloader.java ..."[m
+[32m+[m[32m                fi[m
+[32m+[m[32m                ("$JAVA_HOME/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")[m
+[32m+[m[32m            fi[m
+[32m+[m[32m        fi[m
+[32m+[m[32m    fi[m
+[32m+[m[32mfi[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m[32m# End of extension[m
+[32m+[m[32m##########################################################################################[m
+[32m+[m
+[32m+[m[32mexport MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-"$BASE_DIR"}[m
+[32m+[m[32mif [ "$MVNW_VERBOSE" = true ]; then[m
+[32m+[m[32m  echo $MAVEN_PROJECTBASEDIR[m
+[32m+[m[32mfi[m
+[32m+[m[32mMAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"[m
+[32m+[m
+[32m+[m[32m# For Cygwin, switch paths to Windows format before running java[m
+[32m+[m[32mif $cygwin; then[m
+[32m+[m[32m  [ -n "$M2_HOME" ] &&[m
+[32m+[m[32m    M2_HOME=`cygpath --path --windows "$M2_HOME"`[m
+[32m+[m[32m  [ -n "$JAVA_HOME" ] &&[m
+[32m+[m[32m    JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`[m
+[32m+[m[32m  [ -n "$CLASSPATH" ] &&[m
+[32m+[m[32m    CLASSPATH=`cygpath --path --windows "$CLASSPATH"`[m
+[32m+[m[32m  [ -n "$MAVEN_PROJECTBASEDIR" ] &&[m
+[32m+[m[32m    MAVEN_PROJECTBASEDIR=`cygpath --path --windows "$MAVEN_PROJECTBASEDIR"`[m
+[32m+[m[32mfi[m
+[32m+[m
+[32m+[m[32m# Provide a "standardized" way to retrieve the CLI args that will[m
+[32m+[m[32m# work with both Windows and non-Windows executions.[m
+[32m+[m[32mMAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"[m
+[32m+[m[32mexport MAVEN_CMD_LINE_ARGS[m
+[32m+[m
+[32m+[m[32mWRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain[m
+[32m+[m
+[32m+[m[32mexec "$JAVACMD" \[m
+[32m+[m[32m  $MAVEN_OPTS \[m
+[32m+[m[32m  $MAVEN_DEBUG_OPTS \[m
+[32m+[m[32m  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \[m
+[32m+[m[32m  "-Dmaven.home=${M2_HOME}" \[m
+[32m+[m[32m  "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \[m
+[32m+[m[32m  ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"[m
+[1mdiff --git a/mvnw.cmd b/mvnw.cmd[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1d8ab01[m
+[1m--- /dev/null[m
+[1m+++ b/mvnw.cmd[m
+[36m@@ -0,0 +1,188 @@[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Licensed to the Apache Software Foundation (ASF) under one[m
+[32m+[m[32m@REM or more contributor license agreements.  See the NOTICE file[m
+[32m+[m[32m@REM distributed with this work for additional information[m
+[32m+[m[32m@REM regarding copyright ownership.  The ASF licenses this file[m
+[32m+[m[32m@REM to you under the Apache License, Version 2.0 (the[m
+[32m+[m[32m@REM "License"); you may not use this file except in compliance[m
+[32m+[m[32m@REM with the License.  You may obtain a copy of the License at[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM    https://www.apache.org/licenses/LICENSE-2.0[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Unless required by applicable law or agreed to in writing,[m
+[32m+[m[32m@REM software distributed under the License is distributed on an[m
+[32m+[m[32m@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY[m
+[32m+[m[32m@REM KIND, either express or implied.  See the License for the[m
+[32m+[m[32m@REM specific language governing permissions and limitations[m
+[32m+[m[32m@REM under the License.[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m[32m@REM Maven Start Up Batch script[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Required ENV vars:[m
+[32m+[m[32m@REM JAVA_HOME - location of a JDK home dir[m
+[32m+[m[32m@REM[m
+[32m+[m[32m@REM Optional ENV vars[m
+[32m+[m[32m@REM M2_HOME - location of maven2's installed home dir[m
+[32m+[m[32m@REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands[m
+[32m+[m[32m@REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending[m
+[32m+[m[32m@REM MAVEN_OPTS - parameters passed to the Java VM when running Maven[m
+[32m+[m[32m@REM     e.g. to debug Maven itself, use[m
+[32m+[m[32m@REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000[m
+[32m+[m[32m@REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files[m
+[32m+[m[32m@REM ----------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32m@REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'[m
+[32m+[m[32m@echo off[m
+[32m+[m[32m@REM set title of command window[m
+[32m+[m[32mtitle %0[m
+[32m+[m[32m@REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'[m
+[32m+[m[32m@if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%[m
+[32m+[m
+[32m+[m[32m@REM set %HOME% to equivalent of $HOME[m
+[32m+[m[32mif "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")[m
+[32m+[m
+[32m+[m[32m@REM Execute a user defined script before this one[m
+[32m+[m[32mif not "%MAVEN_SKIP_RC%" == "" goto skipRcPre[m
+[32m+[m[32m@REM check for pre script, once with legacy .bat ending and once with .cmd ending[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_pre.bat" call "%USERPROFILE%\mavenrc_pre.bat" %*[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*[m
+[32m+[m[32m:skipRcPre[m
+[32m+[m
+[32m+[m[32m@setlocal[m
+[32m+[m
+[32m+[m[32mset ERROR_CODE=0[m
+[32m+[m
+[32m+[m[32m@REM To isolate internal variables from possible post scripts, we use another setlocal[m
+[32m+[m[32m@setlocal[m
+[32m+[m
+[32m+[m[32m@REM ==== START VALIDATION ====[m
+[32m+[m[32mif not "%JAVA_HOME%" == "" goto OkJHome[m
+[32m+[m
+[32m+[m[32mecho.[m
+[32m+[m[32mecho Error: JAVA_HOME not found in your environment. >&2[m
+[32m+[m[32mecho Please set the JAVA_HOME variable in your environment to match the >&2[m
+[32m+[m[32mecho location of your Java installation. >&2[m
+[32m+[m[32mecho.[m
+[32m+[m[32mgoto error[m
+[32m+[m
+[32m+[m[32m:OkJHome[m
+[32m+[m[32mif exist "%JAVA_HOME%\bin\java.exe" goto init[m
+[32m+[m
+[32m+[m[32mecho.[m
+[32m+[m[32mecho Error: JAVA_HOME is set to an invalid directory. >&2[m
+[32m+[m[32mecho JAVA_HOME = "%JAVA_HOME%" >&2[m
+[32m+[m[32mecho Please set the JAVA_HOME variable in your environment to match the >&2[m
+[32m+[m[32mecho location of your Java installation. >&2[m
+[32m+[m[32mecho.[m
+[32m+[m[32mgoto error[m
+[32m+[m
+[32m+[m[32m@REM ==== END VALIDATION ====[m
+[32m+[m
+[32m+[m[32m:init[m
+[32m+[m
+[32m+[m[32m@REM Find the project base dir, i.e. the directory that contains the folder ".mvn".[m
+[32m+[m[32m@REM Fallback to current working directory if not found.[m
+[32m+[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%[m
+[32m+[m[32mIF NOT "%MAVEN_PROJECTBASEDIR%"=="" goto endDetectBaseDir[m
+[32m+[m
+[32m+[m[32mset EXEC_DIR=%CD%[m
+[32m+[m[32mset WDIR=%EXEC_DIR%[m
+[32m+[m[32m:findBaseDir[m
+[32m+[m[32mIF EXIST "%WDIR%"\.mvn goto baseDirFound[m
+[32m+[m[32mcd ..[m
+[32m+[m[32mIF "%WDIR%"=="%CD%" goto baseDirNotFound[m
+[32m+[m[32mset WDIR=%CD%[m
+[32m+[m[32mgoto findBaseDir[m
+[32m+[m
+[32m+[m[32m:baseDirFound[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%WDIR%[m
+[32m+[m[32mcd "%EXEC_DIR%"[m
+[32m+[m[32mgoto endDetectBaseDir[m
+[32m+[m
+[32m+[m[32m:baseDirNotFound[m
+[32m+[m[32mset MAVEN_PROJECTBASEDIR=%EXEC_DIR%[m
+[32m+[m[32mcd "%EXEC_DIR%"[m
+[32m+[m
+[32m+[m[32m:endDetectBaseDir[m
+[32m+[m
+[32m+[m[32mIF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig[m
+[32m+[m
+[32m+[m[32m@setlocal EnableExtensions EnableDelayedExpansion[m
+[32m+[m[32mfor /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a[m
+[32m+[m[32m@endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%[m
+[32m+[m
+[32m+[m[32m:endReadAdditionalConfig[m
+[32m+[m
+[32m+[m[32mSET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"[m
+[32m+[m[32mset WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"[m
+[32m+[m[32mset WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain[m
+[32m+[m
+[32m+[m[32mset DOWNLOAD_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m
+[32m+[m[32mFOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO ([m
+[32m+[m[32m    IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B[m
+[32m+[m[32m)[m
+[32m+[m
+[32m+[m[32m@REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central[m
+[32m+[m[32m@REM This allows using the maven wrapper in projects that prohibit checking in binary data.[m
+[32m+[m[32mif exist %WRAPPER_JAR% ([m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Found %WRAPPER_JAR%[m
+[32m+[m[32m    )[m
+[32m+[m[32m) else ([m
+[32m+[m[32m    if not "%MVNW_REPOURL%" == "" ([m
+[32m+[m[32m        SET DOWNLOAD_URL="%MVNW_REPOURL%/org/apache/maven/wrapper/maven-wrapper/3.1.0/maven-wrapper-3.1.0.jar"[m
+[32m+[m[32m    )[m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Couldn't find %WRAPPER_JAR%, downloading it ...[m
+[32m+[m[32m        echo Downloading from: %DOWNLOAD_URL%[m
+[32m+[m[32m    )[m
+[32m+[m
+[32m+[m[32m    powershell -Command "&{"^[m
+[32m+[m		[32m"$webclient = new-object System.Net.WebClient;"^[m
+[32m+[m		[32m"if (-not ([string]::IsNullOrEmpty('%MVNW_USERNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^[m
+[32m+[m		[32m"$webclient.Credentials = new-object System.Net.NetworkCredential('%MVNW_USERNAME%', '%MVNW_PASSWORD%');"^[m
+[32m+[m		[32m"}"^[m
+[32m+[m		[32m"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webclient.DownloadFile('%DOWNLOAD_URL%', '%WRAPPER_JAR%')"^[m
+[32m+[m		[32m"}"[m
+[32m+[m[32m    if "%MVNW_VERBOSE%" == "true" ([m
+[32m+[m[32m        echo Finished downloading %WRAPPER_JAR%[m
+[32m+[m[32m    )[m
+[32m+[m[32m)[m
+[32m+[m[32m@REM End of extension[m
+[32m+[m
+[32m+[m[32m@REM Provide a "standardized" way to retrieve the CLI args that will[m
+[32m+[m[32m@REM work with both Windows and non-Windows executions.[m
+[32m+[m[32mset MAVEN_CMD_LINE_ARGS=%*[m
+[32m+[m
+[32m+[m[32m%MAVEN_JAVA_EXE% ^[m
+[32m+[m[32m  %JVM_CONFIG_MAVEN_PROPS% ^[m
+[32m+[m[32m  %MAVEN_OPTS% ^[m
+[32m+[m[32m  %MAVEN_DEBUG_OPTS% ^[m
+[32m+[m[32m  -classpath %WRAPPER_JAR% ^[m
+[32m+[m[32m  "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" ^[m
+[32m+[m[32m  %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*[m
+[32m+[m[32mif ERRORLEVEL 1 goto error[m
+[32m+[m[32mgoto end[m
+[32m+[m
+[32m+[m[32m:error[m
+[32m+[m[32mset ERROR_CODE=1[m
+[32m+[m
+[32m+[m[32m:end[m
+[32m+[m[32m@endlocal & set ERROR_CODE=%ERROR_CODE%[m
+[32m+[m
+[32m+[m[32mif not "%MAVEN_SKIP_RC%"=="" goto skipRcPost[m
+[32m+[m[32m@REM check for post script, once with legacy .bat ending and once with .cmd ending[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_post.bat" call "%USERPROFILE%\mavenrc_post.bat"[m
+[32m+[m[32mif exist "%USERPROFILE%\mavenrc_post.cmd" call "%USERPROFILE%\mavenrc_post.cmd"[m
+[32m+[m[32m:skipRcPost[m
+[32m+[m
+[32m+[m[32m@REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'[m
+[32m+[m[32mif "%MAVEN_BATCH_PAUSE%"=="on" pause[m
+[32m+[m
+[32m+[m[32mif "%MAVEN_TERMINATE_CMD%"=="on" exit %ERROR_CODE%[m
+[32m+[m
+[32m+[m[32mcmd /C exit /B %ERROR_CODE%[m
+[1mdiff --git a/pom.xml b/pom.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bd5c32e[m
+[1m--- /dev/null[m
+[1m+++ b/pom.xml[m
+[36m@@ -0,0 +1,112 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"[m
+[32m+[m[32m         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">[m
+[32m+[m[32m    <modelVersion>4.0.0</modelVersion>[m
+[32m+[m[32m    <parent>[m
+[32m+[m[32m        <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m        <artifactId>spring-boot-starter-parent</artifactId>[m
+[32m+[m[32m        <version>2.7.18-SNAPSHOT</version>[m
+[32m+[m[32m        <relativePath/> <!-- lookup parent from repository -->[m
+[32m+[m[32m    </parent>[m
+[32m+[m[32m    <groupId>com.example</groupId>[m
+[32m+[m[32m    <artifactId>project</artifactId>[m
+[32m+[m[32m    <version>0.0.1-SNAPSHOT</version>[m
+[32m+[m[32m    <name>project</name>[m
+[32m+[m[32m    <description>project</description>[m
+[32m+[m[32m    <properties>[m
+[32m+[m[32m        <java.version>11</java.version>[m
+[32m+[m[32m    </properties>[m
+[32m+[m[32m    <dependencies>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m            <artifactId>spring-boot-starter-data-jpa</artifactId>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m            <artifactId>spring-boot-starter-security</artifactId>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m            <artifactId>spring-boot-starter-validation</artifactId>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m            <artifactId>spring-boot-starter-web</artifactId>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.postgresql</groupId>[m
+[32m+[m[32m            <artifactId>postgresql</artifactId>[m
+[32m+[m[32m            <scope>runtime</scope>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.projectlombok</groupId>[m
+[32m+[m[32m            <artifactId>lombok</artifactId>[m
+[32m+[m[32m            <optional>true</optional>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m            <artifactId>spring-boot-starter-test</artifactId>[m
+[32m+[m[32m            <scope>test</scope>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m        <dependency>[m
+[32m+[m[32m            <groupId>org.springframework.security</groupId>[m
+[32m+[m[32m            <artifactId>spring-security-test</artifactId>[m
+[32m+[m[32m            <scope>test</scope>[m
+[32m+[m[32m        </dependency>[m
+[32m+[m[32m    </dependencies>[m
+[32m+[m
+[32m+[m[32m    <build>[m
+[32m+[m[32m        <plugins>[m
+[32m+[m[32m            <plugin>[m
+[32m+[m[32m                <groupId>org.springframework.boot</groupId>[m
+[32m+[m[32m                <artifactId>spring-boot-maven-plugin</artifactId>[m
+[32m+[m[32m                <configuration>[m
+[32m+[m[32m                    <excludes>[m
+[32m+[m[32m                        <exclude>[m
+[32m+[m[32m                            <groupId>org.projectlombok</groupId>[m
+[32m+[m[32m                            <artifactId>lombok</artifactId>[m
+[32m+[m[32m                        </exclude>[m
+[32m+[m[32m                    </excludes>[m
+[32m+[m[32m                </configuration>[m
+[32m+[m[32m            </plugin>[m
+[32m+[m[32m        </plugins>[m
+[32m+[m[32m    </build>[m
+[32m+[m[32m    <repositories>[m
+[32m+[m[32m        <repository>[m
+[32m+[m[32m            <id>spring-milestones</id>[m
+[32m+[m[32m            <name>Spring Milestones</name>[m
+[32m+[m[32m            <url>https://repo.spring.io/milestone</url>[m
+[32m+[m[32m            <snapshots>[m
+[32m+[m[32m                <enabled>false</enabled>[m
+[32m+[m[32m            </snapshots>[m
+[32m+[m[32m        </repository>[m
+[32m+[m[32m        <repository>[m
+[32m+[m[32m            <id>spring-snapshots</id>[m
+[32m+[m[32m            <name>Spring Snapshots</name>[m
+[32m+[m[32m            <url>https://repo.spring.io/snapshot</url>[m
+[32m+[m[32m            <releases>[m
+[32m+[m[32m                <enabled>false</enabled>[m
+[32m+[m[32m            </releases>[m
+[32m+[m[32m        </repository>[m
+[32m+[m[32m    </repositories>[m
+[32m+[m[32m    <pluginRepositories>[m
+[32m+[m[32m        <pluginRepository>[m
+[32m+[m[32m            <id>spring-milestones</id>[m
+[32m+[m[32m            <name>Spring Milestones</name>[m
+[32m+[m[32m            <url>https://repo.spring.io/milestone</url>[m
+[32m+[m[32m            <snapshots>[m
+[32m+[m[32m                <enabled>false</enabled>[m
+[32m+[m[32m            </snapshots>[m
+[32m+[m[32m        </pluginRepository>[m
+[32m+[m[32m        <pluginRepository>[m
+[32m+[m[32m            <id>spring-snapshots</id>[m
+[32m+[m[32m            <name>Spring Snapshots</name>[m
+[32m+[m[32m            <url>https://repo.spring.io/snapshot</url>[m
+[32m+[m[32m            <releases>[m
+[32m+[m[32m                <enabled>false</enabled>[m
+[32m+[m[32m            </releases>[m
+[32m+[m[32m        </pluginRepository>[m
+[32m+[m[32m    </pluginRepositories>[m
+[32m+[m
+[32m+[m[32m</project>[m
+[1mdiff --git a/src/main/java/com/example/project/ProjectApplication.java b/src/main/java/com/example/project/ProjectApplication.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3f2814d[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/ProjectApplication.java[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mpackage com.example.project;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.boot.SpringApplication;[m
+[32m+[m[32mimport org.springframework.boot.autoconfigure.SpringBootApplication;[m
+[32m+[m
+[32m+[m[32m@SpringBootApplication[m
+[32m+[m[32mpublic class ProjectApplication {[m
+[32m+[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        SpringApplication.run(ProjectApplication.class, args);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/config/SecurityConfig.java b/src/main/java/com/example/project/config/SecurityConfig.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2c6be83[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/config/SecurityConfig.java[m
+[36m@@ -0,0 +1,48 @@[m
+[32m+[m[32mpackage com.example.project.config;[m
+[32m+[m
+[32m+[m[32mimport org.springframework.context.annotation.Bean;[m
+[32m+[m[32mimport org.springframework.context.annotation.Configuration;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.builders.HttpSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;[m
+[32m+[m[32mimport org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;[m
+[32m+[m[32mimport org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;[m
+[32m+[m[32mimport org.springframework.security.crypto.password.PasswordEncoder;[m
+[32m+[m
+[32m+[m[32m@Configuration[m
+[32m+[m[32m@EnableWebSecurity[m
+[32m+[m[32mpublic class SecurityConfig extends WebSecurityConfigurerAdapter {[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void configure(AuthenticationManagerBuilder auth) throws Exception {[m
+[32m+[m[32m        auth[m
+[32m+[m[32m                .inMemoryAuthentication()[m
+[32m+[m[32m                .withUser("XODIM").password(passwordEncoder().encode("1234")).roles("XODIM")[m
+[32m+[m[32m                .and()[m
+[32m+[m[32m                .withUser("BOLIM").password(passwordEncoder().encode("1234")).roles("BOLIM")[m
+[32m+[m[32m                .and()[m
+[32m+[m[32m                .withUser("DIREKTOR").password(passwordEncoder().encode("1234")).roles("DIREKTOR");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void configure(HttpSecurity http) throws Exception {[m
+[32m+[m[32m        http.[m
+[32m+[m[32m                 csrf().[m
+[32m+[m[32m                 disable().[m
+[32m+[m[32m                 headers().[m
+[32m+[m[32m                 frameOptions().[m
+[32m+[m[32m                 disable()[m
+[32m+[m[32m                 .and().[m
+[32m+[m[32m                 authorizeRequests()[m
+[32m+[m[32m                .antMatchers("bolim/**").hasAnyRole("DIREKTOR")[m
+[32m+[m[32m                .antMatchers("xodim/**").hasAnyRole("BOLIM")[m
+[32m+[m[32m                .antMatchers("pasport/**").permitAll()[m
+[32m+[m[32m                .antMatchers("kelganvaqt").permitAll()[m
+[32m+[m[32m                .anyRequest().authenticated()[m
+[32m+[m[32m                .and().httpBasic();[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @Bean[m
+[32m+[m[32m    PasswordEncoder passwordEncoder(){[m
+[32m+[m[32m        return new BCryptPasswordEncoder();[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/controller/BolimController.java b/src/main/java/com/example/project/controller/BolimController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..74cd35d[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/controller/BolimController.java[m
+[36m@@ -0,0 +1,28 @@[m
+[32m+[m[32mpackage com.example.project.controller;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Bolim;[m
+[32m+[m[32mimport com.example.project.repository.BolimRepository;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/bolim")[m
+[32m+[m[32mpublic class BolimController {[m
+[32m+[m[32m private final BolimRepository bolimRepository;[m
+[32m+[m
+[32m+[m[32m    public BolimController(BolimRepository bolimRepository) {[m
+[32m+[m[32m        this.bolimRepository = bolimRepository;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("save")[m
+[32m+[m[32m    public ResponseEntity save(Bolim bolim){[m
+[32m+[m[32m        Bolim result=bolimRepository.save(bolim);[m
+[32m+[m[32m        return ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m[32m   @DeleteMapping("/delete/{id}")[m
+[32m+[m[32m    public ResponseEntity delete(@PathVariable Long id){[m
+[32m+[m[32m        bolimRepository.deleteById(id);[m
+[32m+[m[32m        return ResponseEntity.ok("Bo'lim o'chirildi");[m
+[32m+[m[32m   }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/controller/LavozimController.java b/src/main/java/com/example/project/controller/LavozimController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f02b13b[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/controller/LavozimController.java[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mpackage com.example.project.controller;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Lavozim;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.CrossOrigin;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.PostMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RequestMapping;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.RestController;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/lavozim")[m
+[32m+[m[32m@CrossOrigin(value = "*")[m
+[32m+[m[32mpublic class LavozimController {[m
+[32m+[m
+[32m+[m[32m    @PostMapping("direktor")[m
+[32m+[m[32m    public Lavozim direktor(){[m
+[32m+[m[32m       return Lavozim.builder().id(1L).name("Direktor").build();[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @PostMapping("bolimboshliq")[m
+[32m+[m[32m    public Lavozim bolimboshliq(){[m
+[32m+[m[32m        return Lavozim.builder().id(2L).name("Bo'lim boshliq").build();[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @PostMapping("xodim")[m
+[32m+[m[32m    public Lavozim xodim(){[m
+[32m+[m[32m        return Lavozim.builder().id(1L).name("Xodim").build();[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/controller/PasportController.java b/src/main/java/com/example/project/controller/PasportController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a8cbdb6[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/controller/PasportController.java[m
+[36m@@ -0,0 +1,33 @@[m
+[32m+[m[32mpackage com.example.project.controller;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Pasport;[m
+[32m+[m[32mimport com.example.project.service.PasportService;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/pasport")[m
+[32m+[m[32mpublic class PasportController {[m
+[32m+[m[32m    private final PasportService pasportService;[m
+[32m+[m
+[32m+[m[32m    public PasportController(PasportService pasportService) {[m
+[32m+[m[32m        this.pasportService = pasportService;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/save")[m
+[32m+[m[32m    public ResponseEntity save(@RequestBody Pasport pasport){[m
+[32m+[m[32m        if (pasportService.chekAge(pasport.getTugilgan_yili())){[m
+[32m+[m[32m            return new ResponseEntity("Pasport 16 ga to'lgandan keyin Beriladi", HttpStatus.BAD_REQUEST);[m
+[32m+[m[32m        }[m
+[32m+[m[32m        Pasport result=pasportService.save(pasport);[m
+[32m+[m[32m        return  ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @GetMapping("/get/{seria}")[m
+[32m+[m[32m    public ResponseEntity getById(@PathVariable Long seria){[m
+[32m+[m[32m        Pasport result=pasportService.getPasport(seria);[m
+[32m+[m[32m        return ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/controller/XodimController.java b/src/main/java/com/example/project/controller/XodimController.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1308214[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/controller/XodimController.java[m
+[36m@@ -0,0 +1,42 @@[m
+[32m+[m[32mpackage com.example.project.controller;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport com.example.project.service.XodimService;[m
+[32m+[m[32mimport org.springframework.http.HttpStatus;[m
+[32m+[m[32mimport org.springframework.http.ResponseEntity;[m
+[32m+[m[32mimport org.springframework.web.bind.annotation.*;[m
+[32m+[m
+[32m+[m[32m@RestController[m
+[32m+[m[32m@RequestMapping("/xodim")[m
+[32m+[m[32mpublic class XodimController {[m
+[32m+[m[32m    private final XodimService xodimService;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public XodimController(XodimService xodimService) {[m
+[32m+[m[32m        this.xodimService = xodimService;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @PostMapping("/save")[m
+[32m+[m[32m    public ResponseEntity save(@RequestBody Xodim xodim){[m
+[32m+[m[32m        if (xodimService.chekAge(xodim.getAge())){[m
+[32m+[m[32m            return new ResponseEntity("bizda 18 yoshdan kattalar ishga olinadi", HttpStatus.BAD_REQUEST);[m
+[32m+[m[32m        }[m
+[32m+[m[32m        Xodim result=xodimService.save(xodim);[m
+[32m+[m[32m        return ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @PutMapping("/updete")[m
+[32m+[m[32m    public ResponseEntity updete(@PathVariable Long id,@RequestBody Xodim updeteXodim){[m
+[32m+[m[32m        Xodim result=xodimService.updete(id,updeteXodim);[m
+[32m+[m[32m        return ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @DeleteMapping("/delete")[m
+[32m+[m[32m    public ResponseEntity deleteById(@PathVariable Long id){[m
+[32m+[m[32m        xodimService.deleteById(id);[m
+[32m+[m[32m        return ResponseEntity.ok("xodim malumotlari o'chirildi");[m
+[32m+[m[32m    }[m
+[32m+[m[32m    @GetMapping("/get")[m
+[32m+[m[32m    public ResponseEntity getById(@PathVariable Long id){[m
+[32m+[m[32m        Xodim result=xodimService.finById(id);[m
+[32m+[m[32m        return ResponseEntity.ok(result);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/Bolim.java b/src/main/java/com/example/project/entity/Bolim.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dedd32a[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/Bolim.java[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32mpackage com.example.project.entity;[m
+[32m+[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "bolim")[m
+[32m+[m[32mpublic class Bolim implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long id;[m
+[32m+[m
+[32m+[m[32m    String name;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/Hisobot.java b/src/main/java/com/example/project/entity/Hisobot.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2d4b038[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/Hisobot.java[m
+[36m@@ -0,0 +1,34 @@[m
+[32m+[m[32mpackage com.example.project.entity;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.model.KelganVaqt;[m
+[32m+[m[32mimport com.example.project.entity.model.KetganVaqt;[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "hisobot")[m
+[32m+[m[32m@Builder[m
+[32m+[m[32mpublic class Hisobot implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long kun;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Xodim xodim;[m
+[32m+[m
+[32m+[m[32m    Long ishlaganvaqt;[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/Lavozim.java b/src/main/java/com/example/project/entity/Lavozim.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..75b6502[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/Lavozim.java[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32mpackage com.example.project.entity;[m
+[32m+[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "lavozim")[m
+[32m+[m[32m@Builder[m
+[32m+[m[32mpublic class Lavozim implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long id;[m
+[32m+[m
+[32m+[m[32m    String name;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/Pasport.java b/src/main/java/com/example/project/entity/Pasport.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..21b1fc9[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/Pasport.java[m
+[36m@@ -0,0 +1,37 @@[m
+[32m+[m[32mpackage com.example.project.entity;[m
+[32m+[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport javax.validation.constraints.NotNull;[m
+[32m+[m[32mimport javax.validation.constraints.Size;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "pasport")[m
+[32m+[m[32mpublic class Pasport implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @NotNull[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long id;[m
+[32m+[m
+[32m+[m[32m    String JSHSHIR;[m
+[32m+[m
+[32m+[m[32m    String familya;[m
+[32m+[m
+[32m+[m[32m    String ism;[m
+[32m+[m
+[32m+[m[32m    String otasining_ismi;[m
+[32m+[m
+[32m+[m[32m    String millati;[m
+[32m+[m
+[32m+[m[32m    Integer tugilgan_yili;[m
+[32m+[m
+[32m+[m[32m    String jinsi;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/Xodim.java b/src/main/java/com/example/project/entity/Xodim.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1334ce8[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/Xodim.java[m
+[36m@@ -0,0 +1,37 @@[m
+[32m+[m[32mpackage com.example.project.entity;[m
+[32m+[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "xodim")[m
+[32m+[m[32mpublic class Xodim implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long id;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Pasport pasport;[m
+[32m+[m
+[32m+[m[32m    Integer age;[m
+[32m+[m
+[32m+[m[32m    String manzili;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Bolim bolim;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Lavozim lavozim;[m
+[32m+[m
+[32m+[m[32m    Double maoshi;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/model/KelganVaqt.java b/src/main/java/com/example/project/entity/model/KelganVaqt.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a0fa9ba[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/model/KelganVaqt.java[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32mpackage com.example.project.entity.model;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m[32mimport java.time.LocalDateTime;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "kelganVaqt")[m
+[32m+[m[32mpublic class KelganVaqt implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long kun;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Xodim xodim;[m
+[32m+[m
+[32m+[m[32m    LocalDateTime kelganVaqt;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/entity/model/KetganVaqt.java b/src/main/java/com/example/project/entity/model/KetganVaqt.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6ebc6c3[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/entity/model/KetganVaqt.java[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32mpackage com.example.project.entity.model;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport lombok.*;[m
+[32m+[m[32mimport lombok.experimental.FieldDefaults;[m
+[32m+[m
+[32m+[m[32mimport javax.persistence.*;[m
+[32m+[m[32mimport java.io.Serializable;[m
+[32m+[m[32mimport java.time.LocalDateTime;[m
+[32m+[m
+[32m+[m[32m@Entity[m
+[32m+[m[32m@Data[m
+[32m+[m[32m@ToString[m
+[32m+[m[32m@AllArgsConstructor[m
+[32m+[m[32m@NoArgsConstructor[m
+[32m+[m[32m@FieldDefaults(level = AccessLevel.PRIVATE)[m
+[32m+[m[32m@Table(name = "KetganVaqt")[m
+[32m+[m[32mpublic class KetganVaqt implements Serializable {[m
+[32m+[m[32m    @Id[m
+[32m+[m[32m    @GeneratedValue(strategy = GenerationType.IDENTITY)[m
+[32m+[m[32m    Long kun;[m
+[32m+[m
+[32m+[m[32m    @OneToOne[m
+[32m+[m[32m    Xodim xodim;[m
+[32m+[m
+[32m+[m[32m    LocalDateTime ketganVaqt;[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/BolimRepository.java b/src/main/java/com/example/project/repository/BolimRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..90eea32[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/BolimRepository.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Bolim;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface BolimRepository extends JpaRepository<Bolim,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/HisobotRepsitory.java b/src/main/java/com/example/project/repository/HisobotRepsitory.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c2bfaca[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/HisobotRepsitory.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Hisobot;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface HisobotRepsitory extends JpaRepository<Hisobot,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/KelganVaqtRepository.java b/src/main/java/com/example/project/repository/KelganVaqtRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..02fb24e[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/KelganVaqtRepository.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.model.KelganVaqt;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface KelganVaqtRepository extends JpaRepository<KelganVaqt,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/KetganVaqtRepository.java b/src/main/java/com/example/project/repository/KetganVaqtRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3526041[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/KetganVaqtRepository.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.model.KetganVaqt;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface KetganVaqtRepository extends JpaRepository<KetganVaqt,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/PasportRepository.java b/src/main/java/com/example/project/repository/PasportRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4e204b0[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/PasportRepository.java[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m[32mimport com.example.project.entity.Pasport;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface PasportRepository extends JpaRepository<Pasport,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/repository/XodimRepository.java b/src/main/java/com/example/project/repository/XodimRepository.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f629f3d[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/repository/XodimRepository.java[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mpackage com.example.project.repository;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport org.springframework.data.jpa.repository.JpaRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Repository;[m
+[32m+[m
+[32m+[m[32m@Repository[m
+[32m+[m[32mpublic interface XodimRepository extends JpaRepository<Xodim,Long> {[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/service/BolimService.java b/src/main/java/com/example/project/service/BolimService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b76c2c6[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/service/BolimService.java[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mpackage com.example.project.service;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Bolim;[m
+[32m+[m[32mimport com.example.project.repository.BolimRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class BolimService {[m
+[32m+[m[32m    private final BolimRepository bolimRepository;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public BolimService(BolimRepository bolimRepository) {[m
+[32m+[m[32m        this.bolimRepository = bolimRepository;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public Bolim add(Bolim bolim){[m
+[32m+[m[32m        return bolimRepository.save(bolim);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void delete(Long id){[m
+[32m+[m[32m        bolimRepository.deleteById(id);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/service/HisobotService.java b/src/main/java/com/example/project/service/HisobotService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0c0dede[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/service/HisobotService.java[m
+[36m@@ -0,0 +1,21 @@[m
+[32m+[m[32mpackage com.example.project.service;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport com.example.project.repository.XodimRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport java.util.Optional;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class HisobotService {[m
+[32m+[m[32m    private final XodimRepository xodimRepository;[m
+[32m+[m
+[32m+[m[32m    public HisobotService(XodimRepository xodimRepository) {[m
+[32m+[m[32m        this.xodimRepository = xodimRepository;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[1mdiff --git a/src/main/java/com/example/project/service/PasportService.java b/src/main/java/com/example/project/service/PasportService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0f34e6c[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/service/PasportService.java[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32mpackage com.example.project.service;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Pasport;[m
+[32m+[m[32mimport com.example.project.repository.PasportRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport java.time.Year;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class PasportService {[m
+[32m+[m[32m    private final PasportRepository pasportRepository;[m
+[32m+[m
+[32m+[m[32m    public PasportService(PasportRepository pasportRepository) {[m
+[32m+[m[32m        this.pasportRepository = pasportRepository;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public Pasport save(Pasport pasport){[m
+[32m+[m[32m        return pasportRepository.save(pasport);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public boolean chekAge(Integer tugilgan_yili){[m
+[32m+[m[32m        int yosh = Year.now().getValue() - tugilgan_yili;[m
+[32m+[m[32m        return yosh<16;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public Pasport getPasport(Long seria){[m
+[32m+[m[32m        Pasport result=pasportRepository.getById(seria);[m
+[32m+[m[32m        return result;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/java/com/example/project/service/XodimService.java b/src/main/java/com/example/project/service/XodimService.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5d216c0[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/java/com/example/project/service/XodimService.java[m
+[36m@@ -0,0 +1,44 @@[m
+[32m+[m[32mpackage com.example.project.service;[m
+[32m+[m
+[32m+[m[32mimport com.example.project.entity.Xodim;[m
+[32m+[m[32mimport com.example.project.repository.XodimRepository;[m
+[32m+[m[32mimport org.springframework.stereotype.Service;[m
+[32m+[m
+[32m+[m[32mimport java.time.Year;[m
+[32m+[m[32mimport java.util.NoSuchElementException;[m
+[32m+[m
+[32m+[m[32m@Service[m
+[32m+[m[32mpublic class XodimService {[m
+[32m+[m[32m    private final XodimRepository xodimRepository;[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public XodimService(XodimRepository xodimRepository) {[m
+[32m+[m[32m        this.xodimRepository = xodimRepository;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public Xodim save(Xodim xodim){[m
+[32m+[m[32m        return xodimRepository.save(xodim);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public boolean chekAge(Integer tugilgan_yili){[m
+[32m+[m[32m        return Year.now().getValue() - tugilgan_yili<18;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public Xodim updete(Long id,Xodim updetexodim){[m
+[32m+[m[32m        Xodim xodim=xodimRepository.findById(id)[m
+[32m+[m[32m                .orElseThrow(()->new NoSuchElementException("Xodim with ID " + id + " not found"));[m
+[32m+[m[32m        xodim.setBolim(updetexodim.getBolim());[m
+[32m+[m[32m        xodim.setLavozim(updetexodim.getLavozim());[m
+[32m+[m[32m        xodim.setManzili(updetexodim.getManzili());[m
+[32m+[m[32m        xodim.setPasport(updetexodim.getPasport());[m
+[32m+[m[32m        xodim.setAge(updetexodim.getAge());[m
+[32m+[m
+[32m+[m[32m        return xodimRepository.save(xodim);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public void deleteById(Long id){[m
+[32m+[m[32m        xodimRepository.deleteById(id);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public Xodim finById(Long id){[m
+[32m+[m[32m      return xodimRepository.findById(id)[m
+[32m+[m[32m                .orElseThrow(()->new NoSuchElementException("Xodim with ID " + id + " not found"));[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/src/main/resources/application.properties b/src/main/resources/application.properties[m
+[1mnew file mode 100644[m
+[1mindex 0000000..57eb160[m
+[1m--- /dev/null[m
+[1m+++ b/src/main/resources/application.properties[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mserver.port=8097[m
+[32m+[m[32mspring.datasource.url=jdbc:postgresql://localhost:5432/postgres[m
+[32m+[m[32mspring.datasource.username=postgres[m
+[32m+[m[32mspring.datasource.password=12345678[m
+[32m+[m[32mspring.jpa.hibernate.ddl-auto=update[m
+[32m+[m[32mspring.jpa.show-sql=true[m
+[32m+[m[32mspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect[m
+[32m+[m[32mspring.jpa.properties.hibernate.format_sql=true[m
+[32m+[m
+[1mdiff --git a/src/test/java/com/example/project/ProjectApplicationTests.java b/src/test/java/com/example/project/ProjectApplicationTests.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3d820c1[m
+[1m--- /dev/null[m
+[1m+++ b/src/test/java/com/example/project/ProjectApplicationTests.java[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mpackage com.example.project;[m
+[32m+[m
+[32m+[m[32mimport org.junit.jupiter.api.Test;[m
+[32m+[m[32mimport org.springframework.boot.test.context.SpringBootTest;[m
+[32m+[m
+[32m+[m[32m@SpringBootTest[m
+[32m+[m[32mclass ProjectApplicationTests {[m
+[32m+[m
+[32m+[m[32m    @Test[m
+[32m+[m[32m    void contextLoads() {[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
